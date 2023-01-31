@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Yes man </title>
+    <style>
+      .tabs {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .tabs li {
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        background-color: lightgray;
+        border: 1px solid gray;
+        cursor: pointer;
+      }
+      .tabs li.active {
+        background-color: white;
+      }
+      .show-content {
+        display: none;
+      }
+    </style>
+    
+  </head>
+  <body>
+      <h1> Yes Man </h1>
+      <p> Click the tabs to view the folders 
+<br> Right click the folder, and click download (down arrow)
+
+      </p>
+    <ul class="tabs">
+      <li class="active" data-target="file1">Cluster Truck</li>
+      <li data-target="file2">Call of Duty 4</li>
+      <li data-target="file3">Bro Force</li>
+      <li data-target="file4">Left 4 Dead</li>
+      <li data-target="file5">Halo 2</li>
+      <li data-target="file6">Skyrim Legendary edition</li>
+    </ul>
+    <div id="file7" call="show-content">
+<p> Welcome, follow the instructions above, we aim to bring more games to you. <br> You will be able to download Halo 2 instantly as it does not need any components authorised </p>
+      </div>
+    <div id="file1" class="show-content">
+      <iframe src="https://workdrive.zohopublic.com.au/embed/srt7a0fbc71cf29284b2383ba90f503375fc6?toolbar=false&layout=grid&appearance=light&themecolor=green" scrolling="no" frameborder="0" allowfullscreen=false width="600" height="520"></iframe>
+    </div>
+    <div id="file2" class="show-content">
+      <iframe src="https://workdrive.zohopublic.com.au/embed/srt7a18ff2df872634e2da4bde969bfd57870?toolbar=false&layout=grid&appearance=light&themecolor=green" scrolling="no" frameborder="0" allowfullscreen=true width="600" height="520" ></iframe>
+    </div>
+    <div id="file3" class="show-content">
+      <iframe src="https://workdrive.zohopublic.com.au/embed/srt7a047b7cf4914e4038a5a8e6850285b291?toolbar=false&layout=grid&appearance=light&themecolor=green" scrolling="no" frameborder="0" allowfullscreen=true width="600" height="520" ></iframe>
+      </div>
+    <div id="file4" class="show-content">
+<iframe src="https://workdrive.zohopublic.com.au/embed/srt7ad93a6b45aa704456b7dd48c9ac3417d8?toolbar=false&layout=grid&appearance=light&themecolor=green" scrolling="no" frameborder="0" allowfullscreen=true width="600" height="520" ></iframe>
+    </div>
+<div id="file5" class="show-content">
+<iframe src="https://workdrive.zohopublic.com.au/embed/srt7aa7fd191abe414cf0a1e30c9bac5ab2ff?toolbar=false&layout=grid&appearance=light&themecolor=green" scrolling="no" frameborder="0" allowfullscreen=true width="800" height="520" ></iframe>
+  </div>
+  <div id="file6" class="show-content">
+<iframe src="https://workdrive.zohopublic.com.au/embed/srt7a0e62f868304b45808a85745b11c39fb4?toolbar=false&layout=grid&appearance=light&themecolor=green" scrolling="no" frameborder="0" allowfullscreen=true width="800" height="520" ></iframe>
+    </div>
+    
+    <script>
+      const tabs = document.querySelectorAll('.tabs li');
+      const showContents = document.querySelectorAll('.show-content');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(tab => tab.classList.remove('active'));
+          tab.classList.add('active');
+          
+          showContents.forEach(content => {
+            content.style.display = 'none';
+          });
+          
+          const target = tab.dataset.target;
+          document.getElementById(target).style.display = 'block';
+        });
+      });
+    </script>
+  </body>
+</html>
